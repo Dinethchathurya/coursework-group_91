@@ -1,0 +1,39 @@
+name: Full-stack CI/CD with Docker Compose
+
+on:
+  push:
+    branches:
+      - main  
+      - backend
+      - develop
+  pull_request:
+    branches:
+      - main 
+      - backend
+      - develop
+
+jobs:
+  docker-compose:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker-compose
+
+      - name: Build and run Docker Compose services
+        run: |
+          docker-compose -f docker-compose.yml up -d --build  # Build and run containers
+
+      - name: Shut down Docker Compose services
+        run: |
+          docker-compose down  # Stops and removes all containers

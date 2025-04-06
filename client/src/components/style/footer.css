@@ -1,0 +1,48 @@
+.footer-column {
+    @apply w-[30%] px-5 py-4;
+  }
+  
+  .footer-column h3 {
+    @apply text-lg mb-2 uppercase;
+  }
+  
+  .footer-column ul {
+    @apply list-none p-0;
+  }
+  
+  .footer-column ul li {
+    @apply mb-2;
+  }
+  
+  .footer-column ul li a {
+    @apply text-white no-underline transition ease-in-out duration-300;
+  }
+  
+  .footer-column ul li a:hover {
+    @apply text-[#ed0c6e];
+  }
+  
+  
+  .subscribe button:hover {
+    @apply bg-[#d4a317];
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      @apply flex-col items-center;
+    }
+  
+    .footer-column {
+      @apply w-full mb-5;
+    }
+  
+    .subscribe form {
+      @apply w-full;
+    }
+  
+    .subscribe input,
+    .subscribe button {
+      @apply w-[90%];
+    }
+  }
+  

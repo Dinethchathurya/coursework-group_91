@@ -1,0 +1,40 @@
+.order-details {
+    @apply m-5
+}
+
+.order-details-table {
+    @apply w-full border-collapse mt-5
+}
+
+.order-details-table th,
+.order-details-table td {
+    @apply border border-gray-300 p-2 text-center
+}
+
+.order-details-table th {
+    @apply bg-[#131334] font-bold
+}
+
+.order-details-table tr:nth-child(even) {
+    @apply bg-[#131334]
+}
+
+.order-details-table tr:hover {
+    @apply bg-[#414141]
+}
+
+.status-label {
+    @apply inline-block px-2 py-1 text-xs font-bold rounded-full text-white
+}
+
+.status-label.completed {
+    @apply bg-green-500
+}
+
+.status-label.pending {
+    @apply bg-orange-500
+}
+
+.status-label.cancelled {
+    @apply bg-red-500
+}

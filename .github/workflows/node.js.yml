@@ -1,0 +1,48 @@
+name: Full-stack CI/CD
+
+on:
+  push:
+    branches:
+      - main  
+      - develop
+      - backend
+      - backend-CICD
+  pull_request:
+    branches:
+      - main 
+      - develop
+      - backend 
+      - backend-CICD
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Set up Node.js for React
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' 
+
+      - name: Install dependencies for React
+        run: |
+          cd client
+          npm install
+        
+      - name: Build React app
+        run: |
+          cd client
+          npm run build
+      - name: run tests
+        run: |
+          cd client
+          npm run test
+      - name: run code analysis
+        run: |
+          cd client
+          npm run lint

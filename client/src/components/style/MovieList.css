@@ -1,0 +1,96 @@
+.movie-grid {
+    @apply grid gap-5;
+  }
+  
+  @media (min-width: 1024px) {
+    .movie-grid {
+      @apply grid-cols-4;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .movie-grid {
+      @apply grid-cols-3;
+    }
+  }
+  
+  @media (min-width: 640px) and (max-width: 767px) {
+    .movie-grid {
+      @apply grid-cols-2;
+    }
+  }
+  
+  @media (max-width: 639px) {
+    .movie-grid {
+      @apply grid-cols-1;
+    }
+  }
+  
+  .movie-card {
+    @apply relative overflow-hidden rounded-lg shadow-lg transform hover:-translate-y-2 transition-all duration-300 ease-in-out;
+  }
+  
+  .movie-image-container {
+    @apply relative;
+  }
+  
+  .movie-poster {
+    @apply w-full h-auto rounded-lg transition-transform duration-300 ease-in-out;
+  }
+  
+  .movie-card:hover .movie-poster {
+    @apply transform scale-110;
+  }
+  
+  .movie-buttons {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden flex-col gap-3;
+  }
+  
+  .movie-card:hover .movie-buttons {
+    @apply flex;
+  }
+  
+  .movie-buttons button {
+    @apply bg-purple-800 text-white border-none py-2 px-4 rounded-md text-sm font-bold cursor-pointer transition-all duration-300 ease-in-out; 
+  }
+  
+  .movie-buttons button:hover {
+    @apply bg-purple-600 transform scale-105;
+  }
+  
+  @media (max-width: 480px) {
+    .movie-buttons button {
+      @apply py-1 px-2 text-xs;
+      height: 35px;  
+      max-width: 220px; 
+    }
+    .movie-buttons {
+      gap: 2px; 
+    }
+  }
+  
+  .movie-title {
+    @apply mt-4 text-base font-bold text-white;
+  }
+  
+  .movie-status {
+    @apply text-sm text-gray-500;
+  }
+  
+  .modal-overlay {
+    @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center z-50;
+  }
+  
+  .modal {
+    @apply bg-white p-5 rounded-lg max-w-[90%] max-h-[90%] overflow-hidden shadow-lg relative;
+  }
+  
+  @media (max-width: 480px) {
+    .modal iframe {
+      @apply w-full h-52
+    }
+  }
+  
+  .close-modal {
+    @apply absolute top-2 right-2 text-white border-none p-1 rounded-full cursor-pointer;
+  }

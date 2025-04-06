@@ -1,0 +1,59 @@
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile   
+    ports:
+      - "5173:5173" 
+    depends_on:
+      - server  
+    environment:
+      - REACT_APP_API_URL=http://localhost:9000
+    command: npm run dev -- --host 
+    volumes:
+      - ./client/src:/app/src
+    networks:
+      - mynetwork
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile   
+    ports:
+      - "9000:9000" 
+    command: npm start
+    volumes:
+      - ./server:/app      
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/movie-booking
+    networks:
+      - mynetwork
+  
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+  
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mynetwork
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    ports:
+      - "8081:8081"
+    depends_on: 
+      - mongo
+    networks:
+      - mynetwork
+
+volumes:
+  mongo_data:
+
+networks:
+  mynetwork:

@@ -1,0 +1,7 @@
+.locations-section {
+    @apply bg-[#f5f5f5] p-5 text-center
+}
+
+.locations-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4;
+}

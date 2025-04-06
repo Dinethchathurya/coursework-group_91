@@ -1,0 +1,50 @@
+# Node and React modules
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
+logs
+*.log.*
+
+# Environment
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# MacOS files
+.DS_Store
+
+# React build files
+/build
+
+# Docker related
+Dockerfile
+docker-compose.yml
+
+# Editor directories and files
+.vscode
+.idea
+*.sublime*
+
+# Optional npm cache directory
+.npm
+
+# CI files
+coverage
+test-results
+
+# Babel & Webpack cache
+.cache
+dist
+
+# Parcel cache
+.cache/
+.parcel-cache/
+
+# ESLint, Prettier, and related
+.eslintcache

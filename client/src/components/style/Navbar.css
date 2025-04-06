@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    .navbar {
+      @apply justify-between; 
+    }
+  
+    .navbar .nav-links {
+      @apply hidden flex-col bg-[#000025] absolute top-[60px] right-[10px] w-[200px] shadow-lg rounded-md;
+    }
+  
+    .navbar .nav-links.active {
+      @apply flex;
+    }
+  
+    .navbar .menu-toggle {
+      @apply flex;
+    }
+  
+    .navbar .nav-buttons {
+      @apply flex flex-row gap-[10px] mt-[10px]; 
+    }
+  }
